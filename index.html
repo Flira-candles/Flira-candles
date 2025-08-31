@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flira Candles</title>
+  <link rel="stylesheet" href="styles.css" />
+<script
+  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+  type="module"
+  ></script>
+
+      </head>
+      <button id="backToTop" title="Go to top">↑</button>
+  <div id="websiteLoader">
+    <dotlottie-wc
+  src="https://lottie.host/bea15101-b2a9-4496-af0c-3c5c68f26ecc/g0n6nTjCZv.lottie"
+  style="width: 300px;height: 300px"
+  speed="1"
+  autoplay
+  loop
+  ></dotlottie-wc>
+  </div>
+  <div id="mainContent" style="display:none;">
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="logo flira.jpg" alt="Flira candle logo">
+    </div>
+    <nav class="nav">
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Custom</a>
+      <a href="cart.html" id="viewCartBtn" class="cart-btn">View Cart(<span id="cart-count">0</span>)</a>
+      <div id="fullScreenLoader" style="display:none;">
+      <dotlottie-wc
+      src="https://lottie.host/6267fe42-aec7-4ca7-8c5b-ca97366228b0/fKG9EKsZtt.lottie"
+      style="width: 300px;height: 300px"
+      speed="0.75"
+      autoplay
+      loop
+    ></dotlottie-wc>
+    </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+      <div class="scroll">
+        <div class="hero-content">
+      <h1>Pure serenity, handcrafted by Flira</h1>
+      <h4>Aroma,beautiful and colorful candles to brighten every moment.</h4>
+    </div>
+  <div class="scroll-content">
+    <span>✨Trending Offer 20% off on combo set</span>
+    <span>💝Free gifts for first 50 customer</span>
+    <span>🥇Best Seller are owl and lotus</span>
+    <span>🔜New stand are coming soon</span>
+    <!-- repeat same set once more for seamless loop -->
+    <span>✨Trending Offer 20% off on combo set</span>
+    <span>💝Free gifts for first 50 customer</span>
+    <span>🥇Best Seller are owl and lotus</span>
+    <span>🔜New stand are coming soon</span>
+  </div>
+  </section>
+
+
+
+  <!-- Floating Button -->
+<button id="extrasBtn" class="extras-btn"><dotlottie-wc
+  src="https://lottie.host/d1ccb12c-4c99-4e78-a41e-ade8921ea4eb/EQvTSMIy2u.lottie"
+  style="width: 50px;height: 50px"
+  speed="1"
+  autoplay
+  loop
+></dotlottie-wc></button>
+
+<!-- Sliding Panel -->
+<div id="extrasPanel" class="extras-panel">
+  <div class="extras-header">
+    <h2>Decorative Add-ons</h2>
+    <button id="closeExtras" class="close-btn">✖</button>
+  </div>
+  <div class="extras-content">
+
+    <div class="extra-item" data-price="55" data-discount="5">
+      <img src="heart tray.jpg" alt="Heart Tray">
+      <h6>single tray</h6>
+     <button class="btn1" onclick="addExtraToCart('Heart tray')">Add to Cart</button>
+    </div>
+
+    <div class="extra-item">
+      <img src="ovel.jpg" alt="oval tray">
+      <button class="btn1" onclick="addExtraToCart('oval tray')">Add to Cart</button>
+    </div>
+    <div class="extra-item">
+      <img src="hexa1.jpg" alt="hexa">
+      <button class="btn1" onclick="addExtraToCart('Hexagon tealight container')">Add to Cart</button>
+    </div>
+       <div class="extra-item">
+      <img src="flower container.webp" alt="flower container">
+     <button class="btn1" onclick="addExtraToCart('flower tealight container')">Add to Cart</button>
+    </div>
+        <div class="extra-item">
+      <img src="circle container.webp" alt="circle container">
+     <button class="btn1" onclick="addExtraToCart('circle tealight container')">Add to Cart</button>
+    </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <section id="products" class="products">
+      <h2>Our Candles </h2>
+    <div class="product-grid">
+        <!-- to change the discount need to change the data-discount section  -->
+      <div class="product-card" data-name="Owl candle" data-price="90" data-discount="20"> 
+
+          <div class="product-slider">
+            <img src="owl.jpeg" alt="Owl Candle" class="active">
+            <img src="owl 1.webp" alt="Owl Candle">
+          </div>
+        <h3>owl</h3>
+        <h6>📏4.5cm 4.5cm 6cm</h6>
+        <div class="product-options-container"></div>
+       <button class="btn add-to-cart">
+        Add to Cart
+      </button>
+      </div>
+
+      <div class="product-card" data-name="Lotus candle" data-price="97" data-discount="20">
+        <div class="product-slider">
+            <img src="lotus.webp" alt="Lotus Candle" class="active">
+            <img src="lotus1.jpg" alt="Lotus Candle">
+          </div>
+        <h3>Lotus</h3>
+           <div class="product-options-container"></div>
+        <!-- this line is change in every card/prodect card -->
+       <button class="btn add-to-cart">
+        Add to Cart
+      </button>
+      </div>
+
+      <div class="product-card" data-name="rose piller" data-price="98" data-discount="20">
+        <div class="product-slider">
+            <img src="rose piller.jpg" alt="rose Candle" class="active">
+            <img src="rose piller 1.webp" alt="rose Candle">
+          </div>
+        <h3>Rose piller</h3>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+      
+      <div class="product-card" data-name="Egg" data-price="60" data-discount="20">
+        <div class="product-slider">
+            <img src="egg.png" alt="Egg Candle" class="active">
+            <img src="egg1.jpg" alt="Egg Candle">
+          </div>
+        <h3>Egg</h3>
+           <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+        <div class="product-card" data-name="Peony Candle" data-price="100" data-discount="20">
+        <div class="product-slider">
+            <img src="big flower.webp" alt="Peony Candle" class="active">
+            <img src="Peony1.jpeg" alt="Peony Candle">
+          </div>
+        <h3>Peony</h3>
+         <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      
+        <div class="product-card" data-name="Heart" data-price="96" data-discount="20">
+        <div class="product-slider">
+            <img src="heart1.jpg" alt="heart Candle" class="active">
+            <img src="heart.avif" alt="heart Candle">
+          </div>
+        <h3>Heart</h3>
+       <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+      
+  
+        <div class="product-card" data-name="Thread">
+        <div class="product-slider">
+            <img src="thread1.jpg" alt="thread Candle" class="active">
+            <img src="thread.jpg" alt="thread Candle">
+          </div>
+        <h3>Thread</h3>
+       <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+      </div>
+     <!-- all the product should be place above this line -->
+  
+    
+  <div class="combo-section">
+  <h2>Create Your Combo Set</h2>
+  <div class="combo-card">
+    <label for="combo1">Candle 1:</label>
+    <select id="combo1">
+      <option value="Owl Candle">Owl Candle</option>
+      <option value="Tulip Candle">Tulip Candle</option>
+      <option value="Rose Candle">Rose Candle</option>
+      <option value="Egg Candle">Egg Candle</option>
+    </select>
+
+    <label for="combo2">Candle 2:</label>
+    <select id="combo2">
+      <option value="Owl Candle">Owl Candle</option>
+      <option value="Tulip Candle">Tulip Candle</option>
+      <option value="Rose Candle">Rose Candle</option>
+      <option value="Egg Candle">Egg Candle</option>
+    </select>
+
+    <label for="combo3">Candle 3 (Optional):</label>
+    <select id="combo3">
+      <option value="None">None</option>
+      <option value="Owl Candle">Owl Candle</option>
+      <option value="Tulip Candle">Tulip Candle</option>
+      <option value="Rose Candle">Rose Candle</option>
+      <option value="Egg Candle">Egg Candle</option>
+    </select>
+
+  <div id="combo-qty-control"></div>
+  <button class="btn add-to-cart" onclick="addComboToCart()">Add Combo to Cart</button>
+
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      At Flira, we craft premium candles with care. From rose piller to relaxing tuilp pieces, 
+      our creations add warmth and elegance to your life.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div>
+    <h2>Contact / Custom Order</h2>
+    <form id="orderForm" onsubmit="submitOrder(event)">
+      <input id="name" placeholder="Your name" required>
+      <input id="phone" placeholder="Your phone number" required>
+      <input id="product" placeholder="Product name (optional)">
+      <input id="qty" type="number" value="1" min="1" placeholder="Quantity">
+      <textarea id="message" placeholder="Message or delivery address" rows="5" required></textarea>
+      <button class="btn checkout-btn">Send via WhatsApp</button>
+    </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Flira Candles. All rights reserved.</p>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
