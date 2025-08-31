@@ -373,33 +373,59 @@ backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  const loader = document.getElementById("websiteLoader");
-  const mainContent = document.getElementById("mainContent");
+window.addEventListener("load", () => {
+    const minLoaderTime = 2000;
+    const startTime = Date.now();
+    const mainContent = document.getElementById("mainContent");
 
-  // Check if loader was shown before
-  if (!localStorage.getItem("loaderShown")) {
-    // Show loader for first time only
-    loader.style.display = "flex";
-    mainContent.style.display = "none";
+    function hideLoader() {
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(0, minLoaderTime - elapsed);
 
-    setTimeout(() => {
-      loader.style.transition = "opacity 0.5s ease";
-      loader.style.opacity = 0;
-      setTimeout(() => {
-        loader.style.display = "none";
+        setTimeout(() => {
+            const loader = document.getElementById("websiteLoader");
+            loader.style.transition = "opacity 0.5s";
+            loader.style.opacity = "0";
+
+            setTimeout(() => {
+                loader.style.display = "none";
+                mainContent.style.display = "block";
+            }, 500); // match fade-out duration
+        }, delay);
+    }
+
+    // Show loader only once per session
+    if (!sessionStorage.getItem("loaderShown")) {
+        sessionStorage.setItem("loaderShown", "true");
+
+        // Preload all images inside mainContent
+        const images = mainContent.querySelectorAll("img");
+        let loadedImages = 0;
+        if (images.length === 0) {
+            hideLoader(); // No images, hide loader immediately
+        } else {
+            images.forEach(img => {
+                if (img.complete) {
+                    loadedImages++;
+                    if (loadedImages === images.length) hideLoader();
+                } else {
+                    img.addEventListener("load", () => {
+                        loadedImages++;
+                        if (loadedImages === images.length) hideLoader();
+                    });
+                    img.addEventListener("error", () => {
+                        loadedImages++;
+                        if (loadedImages === images.length) hideLoader();
+                    });
+                }
+            });
+        }
+    } else {
+        // Loader already shown in this session
+        document.getElementById("websiteLoader").style.display = "none";
         mainContent.style.display = "block";
-      }, 500);
-    }, 2000); // 2 seconds loader
-
-    localStorage.setItem("loaderShown", "true");
-  } else {
-    // Loader already shown, show content immediately
-    loader.style.display = "none";
-    mainContent.style.display = "block";
-  }
+    }
 });
-
 
 
 
