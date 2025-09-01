@@ -45,32 +45,58 @@ function removeItem(index) {
     localStorage.setItem("cart", JSON.stringify(cart)); // Save updated cart
     renderCart(); // Re-render UI
 }
+    function getSelectedPacking() {
+  const selected = document.querySelector('input[name="packing"]:checked').value;
+  let cost = selected === "gift" ? 60 : 0;
+  return { type: selected, cost };
+}
+// Update cart total with wrapping cost
+function updateCartTotal() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+  // Add wrapping cost
+  const packing = getSelectedPacking();
+  total += packing.cost;
+
+  document.getElementById("cart-total").innerText = "₹" + total;
+}
+
+// Update cart UI when packing changes
+document.querySelectorAll('input[name="packing"]').forEach(input => {
+  input.addEventListener("change", updateCartTotal);
+});
 
 function checkoutWhatsApp() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let packing = getSelectedPacking();
 
     if (cart.length === 0) {
-        alert("Your cart is empty!");
+        location.href="index.html#products";
         return;
     }
 
-    const WHATSAPP_NUMBER = "9811522858";
+    const addressField = document.getElementById("address");
+    const address = addressField.value.trim();
+    if (address === "") {
+            addressField.classList.add("shake"); // add shake animation
+        setTimeout(() => {
+            addressField.classList.remove("shake"); // remove after animation
+        }, 800);
+        return;
+    }
+        
+    const WHATSAPP_NUMBER = "919696547412"; // your WhatsApp number
     let message = "Hello Flira! I want to order:\n";
-
-    let totalPrice = 0;
-
+    
     cart.forEach(item => {
-        const itemTotal = item.qty * item.price; // calculate total for this item
-        totalPrice += itemTotal;
-        message += `${item.name} - Qty: ${item.qty} - ₹${itemTotal.toFixed(2)}\n`;
+        message += `${item.name} - Qty: ${item.qty}\n`;
     });
 
-    message += `Total Price: ₹${totalPrice.toFixed(2)}\n`; // add total price at the end
+    message += `\n📍 Delivery Address:\n${address}`;
+    message += `\n🎁 Packing: ${packing === "gift" ? "Gift Wrapping" : "Normal Wrapping"}`;
 
     const encoded = encodeURIComponent(message);
-
-    // Open WhatsApp
-    window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encoded}`, "_blank");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, "_blank");
 
     // Clear cart after checkout
     localStorage.removeItem("cart");
@@ -78,8 +104,4 @@ function checkoutWhatsApp() {
     renderCart();        // updates cart section
     updateCartUI();      // updates total price display if cart section is separate
 }
-
-
-
-
 renderCart();
