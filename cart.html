@@ -6,6 +6,7 @@
   <title>Your Cart | Flira Candles</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="cart.css">
+  <link rel="icon" href="logo flira.jpg" type="image/jpg">
 </head>
 <body>
 
@@ -23,7 +24,36 @@
   <section class="cart-container">
     <h2>Your Cart</h2>
     <div id="cart-items" class="cart-items"></div>
+    <div class="packing-options">
+  <div class="products">
+  <h2>Choose Packaging</h2>
+  <div class="product-grid">
+    
+    <!-- Normal Wrapping -->
+    <label class="product-card packing-card">
+      <input type="radio" name="packing" value="normal" checked>
+      <img src="normal box.webp" alt="Normal Wrapping">
+      <h3>Normal Wrapping</h3>
+      <h6>₹0</h6>
+    </label>
+
+    <!-- Gift Wrapping (Coming Soon) -->
+    <label class="product-card packing-card disabled">
+      <input type="radio" name="packing" value="gift" disabled>
+      <img src="gift wrap.webp" alt="Gift Wrapping">
+      <h3>Gift Wrapping</h3>
+      <h6>+₹50</h6>
+      <div class="overlay">Coming Soon</div>
+    </label>
+
+  </div>
+</div>
+
+
     <div id="cart-total" class="cart-total">total: ₹0</div>
+    <section class="contact">
+    <textarea id="address" placeholder="Enter your address..." rows="3" style="width:100%;"></textarea>
+    </section>
     <button class="btn checkout-btn" onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
   </section>
 
