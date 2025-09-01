@@ -170,41 +170,105 @@ function addToCart(productCard) {
 }
 
 // ---------------- COMBO CART ----------------
-function addComboToCart() {
-    const c1 = document.getElementById("combo1").value;
-    const c2 = document.getElementById("combo2").value;
-    const c3 = document.getElementById("combo3").value;
-    const qty = parseInt(document.getElementById("combo-qty-control").value, 10) || 1;
+const candleOptions = [
+  { value: "Heart Candle", text: "Heart Candle" },
+  { value: "Owl Candle", text: "Owl Candle" },
+  { value: "Tulip Candle", text: "Tulip Candle" },
+  { value: "Rose Candle", text: "Rose Candle" },
+  { value: "Egg Candle", text: "Egg Candle" }
+];
 
-    let comboName = `Combo Set: ${c1} + ${c2}`;
-    let comboPrice = 300; // base price for 2 items
+// ✅ Function to populate select dropdown
+function populateSelect(selectId, includeNone = false) {
+  const select = document.getElementById(selectId);
+  select.innerHTML = ""; // clear old options
 
-    if (c3 !== "None") {
-        comboName += ` + ${c3}`;
-        comboPrice += 89; 
-    }
+  // 🔹 Add placeholder first
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.text = "-- Select Candle --";
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  select.appendChild(placeholder);
 
-    let originalPrice = comboPrice;
-    let discountedPrice = comboPrice - (comboPrice * 0.2); //0.2 is discount of 20%
+  if (includeNone) {
+    const noneOption = document.createElement("option");
+    noneOption.value = "None";
+    noneOption.text = "None";
+    select.appendChild(noneOption);
+  }
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingItem = cart.find(item => item.name === comboName);
-
-        if (existingItem) {
-            existingItem.qty += qty;
-        } else {
-            cart.push({ 
-                name: comboName, 
-                qty, 
-                price: comboPrice * 0.8,        // discounted price
-                originalPrice: comboPrice       // original price (before discount)
-            });
-        }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCount();
-    updateCartUI(); // ensure cart UI updates with new price
+  candleOptions.forEach(opt => {
+    const option = document.createElement("option");
+    option.value = opt.value;
+    option.text = opt.text;
+    select.appendChild(option);
+  });
 }
+
+
+// ✅ Populate combo dropdowns on page load
+document.addEventListener("DOMContentLoaded", () => {
+  populateSelect("combo1");
+  populateSelect("combo2");
+  populateSelect("combo3", true); // combo3 includes "None"
+});
+
+function addComboToCart() {
+  const c1 = document.getElementById("combo1").value;
+  const c2 = document.getElementById("combo2").value;
+  const c3 = document.getElementById("combo3").value;
+  const qty = parseInt(document.getElementById("combo-qty-control").value, 10) || 1;
+
+  // 🔹 Validation: stop if user hasn't selected required candles
+  if (!c1 || !c2) {
+  const combo1 = document.getElementById("combo1");
+  const combo2 = document.getElementById("combo2");
+
+  if (!c1) {
+    combo1.classList.add("shake");
+    setTimeout(() => combo1.classList.remove("shake"), 300);
+  }
+
+  if (!c2) {
+    combo2.classList.add("shake");
+    setTimeout(() => combo2.classList.remove("shake"), 300);
+  }
+
+  return; // stop execution
+}
+
+
+  let comboName = `Combo Set: ${c1} + ${c2}`;
+  let comboPrice = 300; // base price for 2 items
+
+  if (c3 && c3 !== "None") {
+    comboName += ` + ${c3}`;
+    comboPrice += 89;
+  }
+
+  let originalPrice = comboPrice;
+  let discountedPrice = comboPrice - (comboPrice * 0.2); // 20% discount
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingItem = cart.find(item => item.name === comboName);
+
+  if (existingItem) {
+    existingItem.qty += qty;
+  } else {
+    cart.push({
+      name: comboName,
+      qty,
+      price: discountedPrice,   // discounted price
+      originalPrice: comboPrice // original price (before discount)
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  updateCartUI(); // ensure cart UI updates with new price
+}
+
 
 
 // ---------------- SCROLL TO TOP ----------------
