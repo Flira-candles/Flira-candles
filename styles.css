@@ -682,23 +682,45 @@ body {
   animation: shake 0.2s;
 }
 
+.price {
+  font-size: 12px;
+  color:#222; 
+  margin: 0 0 0;
+  margin-top: 0;
+}
+.price span {
+  font-size: 8px;
+  color: #555; 
+}
+
+/* Hide the radio button */
 .packing-card input[type="radio"] {
   display: none;
 }
+
+/* Normal wrapping styles (same as product card) */
 .packing-card {
   position: relative;
   cursor: pointer;
+  transition: transform 0.2s, border 0.2s;
 }
 
-/* Smaller images for wrapping */
+/* Smaller image */
 .packing-card img {
   width: 100%;
-  max-width: 100px;
+  max-width: 150px;
   height: 100px;
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid #E6D5B8;
   margin-bottom: 0.25rem;
+}
+
+/* Selected card highlight */
+.packing-card input[type="radio"]:checked + img {
+  border: 3px solid #C19A6B;   /* golden brown border */
+  box-shadow: 0 0 8px rgba(193, 154, 107, 0.7);
+  transform: scale(1.02);
 }
 
 /* Disabled Gift Wrap */
