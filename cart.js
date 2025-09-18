@@ -85,7 +85,7 @@ function checkoutWhatsApp() {
         return;
     }
         
-    const WHATSAPP_NUMBER = "919696547412"; // your WhatsApp number
+    const WHATSAPP_NUMBER = "9811522858"; // your WhatsApp number
     let message = "Hello Flira! I want to order:\n";
     
     cart.forEach(item => {
@@ -104,4 +104,8 @@ function checkoutWhatsApp() {
     renderCart();        // updates cart section
     updateCartUI();      // updates total price display if cart section is separate
 }
+
+
+
+
 renderCart();
