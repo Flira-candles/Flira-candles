@@ -175,7 +175,11 @@ const candleOptions = [
   { value: "Owl Candle", text: "Owl Candle" },
   { value: "Tulip Candle", text: "Tulip Candle" },
   { value: "Rose Candle", text: "Rose Candle" },
-  { value: "Egg Candle", text: "Egg Candle" }
+  { value: "Egg Candle", text: "Egg Candle" },
+  { value: "Peony Candle", text: "Peony Candle" },
+  { value: "Hexa candle", text: "Hexa Candle" },
+  { value: "Heart tray Candle", text: "Heart tray candle" },
+  { value: "circular container Candle", text: "circular container Candle" },
 ];
 
 // ✅ Function to populate select dropdown
@@ -393,14 +397,6 @@ const fragrancePrices = {
     "Rose": 5.25,
     "sandalwood":3.25,
     "other": 5 // no extra charge for custom fragrance
-};
-
-const extraPrices = {
-    "Heart tray": 49,
-    "oval tray":49,
-    "Hexagon tealight container": 29,
-    "flower tealight container":49,
-    "circle tealight container":29
 };
 
 const viewCartBtn = document.getElementById("viewCartBtn");
