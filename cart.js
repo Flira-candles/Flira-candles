@@ -133,7 +133,7 @@ function checkoutWhatsApp() {
     let subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
     const finalTotal = subtotal + packing.cost + shipping;
 
-    const WHATSAPP_NUMBER = "9898521142";
+    const WHATSAPP_NUMBER = "9811522858";
     let message = "🕯️ Flira Candle Order\n----------------------\n";
 
     // List items with price
@@ -162,3 +162,4 @@ function checkoutWhatsApp() {
 
 // ✅ Initial render
 renderCart();
+
