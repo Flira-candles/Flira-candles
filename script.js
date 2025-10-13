@@ -90,7 +90,7 @@ const colorOptions = `
         <option value="" disabled selected hidden>-- Select Color --</option>
             <option value="Red">Red</option>
             <option value="Blue">Blue</option>
-            <option value="Yellow">Gold</option>
+            <option value="Yellow">Yellow</option>
             <option value="other">Specify</option> 
         </select>
          <input type="text" class="custom-color compact-input" placeholder="Enter color" maxlength="15" style="display:none;">
@@ -461,4 +461,5 @@ window.addEventListener("load", () => {
         mainContent.style.display = "block";
     }
 });
+
 
