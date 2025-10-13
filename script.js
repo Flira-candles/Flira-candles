@@ -74,7 +74,7 @@ const fragranceOptions = `
         <select class="fragrance">
         <option value="" disabled selected hidden>-- Select Fragrance --</option>
             <option value="none">none</option>
-            <option value="Lavender">Lavender</option>
+            <option value="Aqua Breeze">Aqua Breeze</option>
             <option value="Vanilla">Vanilla</option>
             <option value="Rose">Rose</option>
             <option value="sandalwood">Sandalwood</option>
@@ -90,7 +90,7 @@ const colorOptions = `
         <option value="" disabled selected hidden>-- Select Color --</option>
             <option value="Red">Red</option>
             <option value="Blue">Blue</option>
-            <option value="Gold">Gold</option>
+            <option value="Yellow">Gold</option>
             <option value="other">Specify</option> 
         </select>
          <input type="text" class="custom-color compact-input" placeholder="Enter color" maxlength="15" style="display:none;">
@@ -244,7 +244,7 @@ function addComboToCart() {
 
 
   let comboName = `Combo Set: ${c1} + ${c2}`;
-  let comboPrice = 300; // base price for 2 items
+  let comboPrice = 399; // base price for 2 items
 
   if (c3 && c3 !== "None") {
     comboName += ` + ${c3}`;
@@ -289,26 +289,7 @@ window.addEventListener("scroll", function () {
 });
 backToTopBtn.addEventListener("click", scrollToTop);
 
-// ---------------- EXTRAS PANEL ----------------
-document.getElementById("extrasBtn")?.addEventListener("click", function () {
-    document.getElementById("extrasPanel").classList.add("open");
-});
-document.getElementById("closeExtras")?.addEventListener("click", function () {
-    document.getElementById("extrasPanel").classList.remove("open");
-});
 
-document.addEventListener("click", function (event) {
-    const panel = document.getElementById("extrasPanel");
-    const button = document.getElementById("extrasBtn");
-
-    if (
-        panel.classList.contains("open") &&   // panel is open
-        !panel.contains(event.target) &&      // clicked outside panel
-        !button.contains(event.target)        // clicked not on the open button
-    ) {
-        panel.classList.remove("open");
-    }
-});
 // ---------------- DOM READY ----------------
 document.addEventListener("DOMContentLoaded", function ()
  {
@@ -392,10 +373,10 @@ document.querySelectorAll(".product-slider").forEach(slider => {
 });
 
 const fragrancePrices = {
-    "Lavender": 5.25,
-    "Vanilla": 3.25,
-    "Rose": 5.25,
-    "sandalwood":3.25,
+    "Lavender": 0,
+    "Vanilla": 0,
+    "Rose": 0,
+    "sandalwood":0,
     "other": 5 // no extra charge for custom fragrance
 };
 
