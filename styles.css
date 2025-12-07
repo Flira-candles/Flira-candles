@@ -1,5 +1,5 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'laira', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   background-color: #E6D5B8; /* beige background */
   margin: 0%;
@@ -725,3 +725,4 @@ body {
   align-items: center;
   border-radius: 12px;
 }
+
