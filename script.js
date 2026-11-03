@@ -171,15 +171,16 @@ function addToCart(productCard) {
 
 // ---------------- COMBO CART ----------------
 const candleOptions = [
-  { value: "Heart Candle", text: "Heart Candle" },
+ { value: "Heart Candle", text: "Heart Candle" },
   { value: "Owl Candle", text: "Owl Candle" },
   { value: "Tulip Candle", text: "Tulip Candle" },
   { value: "Rose Candle", text: "Rose Candle" },
   { value: "Egg Candle", text: "Egg Candle" },
   { value: "Peony Candle", text: "Peony Candle" },
-  { value: "Hexa candle", text: "Hexa Candle" },
-  { value: "Heart tray Candle", text: "Heart tray candle" },
-  { value: "circular container Candle", text: "circular container Candle" },
+  { value: "modak", text: "modak" },
+  { value: "50 ml glass", text: "50 ml glass" },
+  { value: "3 inch urli", text: "3 inch urli" },
+  { value: "flower urli", text: "flower urli" },
 ];
 
 // ✅ Function to populate select dropdown
