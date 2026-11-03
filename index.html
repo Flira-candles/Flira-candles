@@ -3,260 +3,257 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flira Candles</title>
+  <title>Flira - Design Candles</title>
   <link rel="icon" href="logo flira.jpg" type="image/jpg">
   <link rel="stylesheet" href="styles.css" />
 <script
   src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
   type="module"
   ></script>
-
-      </head>
-      <button id="backToTop" title="Go to top">↑</button>
- 
+</head>
 <body>
-     <div id="websiteLoader">
-    <dotlottie-wc
-  src="https://lottie.host/bea15101-b2a9-4496-af0c-3c5c68f26ecc/g0n6nTjCZv.lottie"
-  style="width: 300px;height: 300px"
-  speed="1"
-  autoplay
-  loop
+<button id="backToTop" title="Go to top">↑</button>
+<div id="websiteLoader">
+  <dotlottie-wc
+    src="https://lottie.host/bea15101-b2a9-4496-af0c-3c5c68f26ecc/g0n6nTjCZv.lottie"
+    style="width: 300px;height: 300px"
+    speed="1"
+    autoplay
+    loop
   ></dotlottie-wc>
-  </div>
-  <div id="mainContent" style="display:none;">
-    
+</div>
+<div id="mainContent" style="display:none;">
   <!-- Header -->
   <header class="header">
     <div class="logo">
       <img src="logo flira.jpg" alt="Flira candle logo">
-</div>
-  <nav>
-    <a href="cart.html" id="viewCartBtn" class="btn1">View Cart(<span id="cart-count">0</span>)</a>
+    </div>
+    <nav>
+      <a href="cart.html" id="viewCartBtn" class="btn1">View Cart(<span id="cart-count">0</span>)</a>
       <div id="fullScreenLoader" style="display:none;">
-      <dotlottie-wc
-      src="https://lottie.host/6267fe42-aec7-4ca7-8c5b-ca97366228b0/fKG9EKsZtt.lottie"
-      style="width: 200px;height: 200px;"
-      speed="0.75"
-      autoplay
-      loop
-    ></dotlottie-wc>
-    </div>
-  <button id="menuBtn" class="menu-btn">
-    menu
-  </button>
-  </nav>
-</header>
+        <dotlottie-wc
+          src="https://lottie.host/6267fe42-aec7-4ca7-8c5b-ca97366228b0/fKG9EKsZtt.lottie"
+          style="width: 200px;height: 200px;"
+          speed="0.75"
+          autoplay
+          loop
+        ></dotlottie-wc>
+      </div>
+      <button id="menuBtn" class="menu-btn">menu</button>
+    </nav>
+  </header>
 
-    <div id="menuPanel" class="menu-panel">
-      <button id="closeBtn" class="close-btn">&times;</button>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#products">Products</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-    </div>
+  <div id="menuPanel" class="menu-panel">
+    <button id="closeBtn" class="close-btn">&times;</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
 
-  <!-- Hero Section -->
   <section class="hero">
-      <div class="scroll">
-        <div class="hero-content">
-      <h1>Pure serenity, handcrafted by Flira</h1>
-      <h4>Aroma,beautiful and colorful candles to brighten every moment.</h4>
+    <div class="scroll">
+      <div class="hero-content">
+        <h1>Design Candles</h1>
+        <h4>Our crafted design candles collection</h4>
+      </div>
+      <div class="scroll-content">
+        <span>✨Trending Offer 20% off on combo set</span>
+        <span>💝Free gifts for first 50 customer</span>
+        <span>🥇Best Seller are owl and lotus</span>
+      </div>
     </div>
-</section>
+  </section>
 
   <!-- Products -->
   <section id="products" class="products">
-      <h2>Our Candles </h2>
+    <h2>Design Candles</h2>
     <div class="product-grid">
-        <!-- to change the discount need to change the data-discount section  -->
-      <div class="product-card" data-name="Owl candle" data-price="99" data-discount="20"> 
-
-          <div class="product-slider">
-            <img src="owl.jpeg" alt="Owl Candle" class="active">
-          </div>
-        <h3>3D Owl <p class="price"><span><s>99</s></span>₹79</p></h3>
+      <div class="product-card" data-name="Owl candle" data-price="80"> 
+        <div class="product-slider">
+          <img src="owl.jpeg" alt="Owl Candle" class="active">
+          <img src="owl 1.webp" alt="Owl Candle">
+        </div>
+        <h3>3D Owl <p class="price">₹80</p></h3>
         <h6>📏4cm 3cm 5.5cm 🔥~1.5hr</h6>
         <div class="product-options-container"></div>
-       <button class="btn add-to-cart">
-        Add to Cart
-      </button>
+        <button class="btn add-to-cart">Add to Cart</button>
       </div>
 
-      <div class="product-card" data-name="Lotus candle" data-price="112" data-discount="20">
+      <div class="product-card" data-name="Lotus candle" data-price="90">
         <div class="product-slider">
-            <img src="lotus.webp" alt="Lotus Candle" class="active">
-          </div>
-          <h3>Lotus <p class="price"><span><s>112</s></span>₹89</p></h3>
-          <h6>📏5cm 5cm 4.5cm 🔥~3hr</h6>
-           <div class="product-options-container"></div>
-        <!-- this line is change in every card/prodect card -->
-       <button class="btn add-to-cart">
-        Add to Cart
-      </button>
-      </div>
-
-      <div class="product-card" data-name="rose piller" data-price="124" data-discount="20">
-        <div class="product-slider">
-            <img src="rose piller.jpg" alt="rose Candle" class="active">
-          </div>
-        <h3>Rose piller <p class="price"><span><s>124</s></span>₹99</p></h3>
-        <h6>📏4cm 4cm 7cm 🔥~3hr</h6>
+          <img src="lotus.webp" alt="Lotus Candle" class="active">
+          <img src="lotus1.jpg" alt="Lotus Candle">
+        </div>
+        <h3>Lotus <p class="price">₹90</p></h3>
+        <h6>📏5cm 5cm 4.5cm 🔥~1.5hr</h6>
         <div class="product-options-container"></div>
         <button class="btn add-to-cart">Add to Cart</button>
       </div>
-      
-      <div class="product-card" data-name="Egg" data-price="86" data-discount="20">
-        <div class="product-slider">
-            <img src="egg.png" alt="Egg Candle" class="active">
-          </div>
-        <h3>Egg <p class="price"><span><s>86</s></span>₹68</p></h3>
-        <h6>📏4.5cm 4.5cm 5cm 🔥~3hr</h6>
-           <div class="product-options-container"></div>
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
 
-        <div class="product-card" data-name="Peony Candle" data-price="124" data-discount="20">
+      <div class="product-card" data-name="rose piller" data-price="90">
         <div class="product-slider">
-            <img src="Peony1.jpeg" alt="Peony Candle" class="active">
-          </div>
-        <h3>Peony <p class="price"><span><s>124</s></span>₹99</p></h3>
-        <h6>📏7.5cm 7.5cm 3.1cm 🔥~2.5hr</h6>
-         <div class="product-options-container"></div>
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
-
-      
-        <div class="product-card" data-name="Heart" data-price="99" data-discount="20">
-        <div class="product-slider">
-            <img src="heart1.jpg" alt="heart Candle" class="active">
-          </div>
-        <h3>Heart <p class="price"><span><s>99</s></span>₹79</p></h3>
-        <h6>📏4.5cm 4.5cm 3.2cm 🔥~3hr</h6>
-       <div class="product-options-container"></div>
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
-      
-  
-        <div class="product-card" data-name="Thread" data-price="99" data-discount="20">
-        <div class="product-slider">
-            <img src="thread1.jpg" alt="thread Candle" class="active">
-          </div>
-        <h3>Thread <p class="price"><span><s>99</s></span>₹79</p></h3>
-        <h6>📏4.4cm 4.4cm 4.5cm 🔥~3.5hr</h6>
-       <div class="product-options-container"></div>
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
-
-       <div class="product-card" data-name="Small jar" data-price="112" data-discount="20">
-        <div class="product-slider">
-         <img src="80ml.jpg" alt="small glass candle" class="active">
-          </div>
-        <h3>Small jar <p class="price"><span><s>112</s></span>₹89</p></h3>
-        <h6>🔥~5+hr</h6>
-       <div class="product-options-container"></div>
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
-
-        <div class="product-card" data-name="Medium jar Candle" data-price="162" data-discount="20">
-        <div class="product-slider">
-            <img src="120.jpg" alt="Medium jar Candle" class="active">
-          </div>
-        <h3>Medium jar <p class="price"><span><s>162</s></span>₹129</p></h3>
-        <h6>🔥~10+hr</h6>
-       <div class="product-options-container"></div>
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
-
-        <div class="product-card" data-name="Hexa" data-price="112" data-discount="20">
-        <div class="product-slider">
-            <img src="hexa.png" alt="hexa Candle" class="active">
-          </div>
-        <h3>Hexa candle<p class="price"><span><s>112</s></span>₹89</p></h3>
-        <h6>Medium tealight 🔥~5+hr</h6>
-       <!-- <div class="product-options-container"></div> -->
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
-
-        <div class="product-card" data-name="circular container candle" data-price="112" data-discount="20">
-        <div class="product-slider">
-            <img src="circle container.webp" alt="circular Candle" class="active">
-          </div>
-        <h3>Circular container candle<p class="price"><span><s>112</s></span>₹89</p></h3>
-        <h6>Medium tealight size 🔥~5+hr</h6>
-       <!-- <div class="product-options-container"></div> -->
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
-
-        <div class="product-card" data-name="heart tray candle" data-price="124" data-discount="20">
-        <div class="product-slider">
-            <img src="heart tray.jpg" alt="heart tray Candle" class="active">
-          </div>
-        <h3>Heart tray Candle <p class="price"><span><s>124</s></span>₹99</p></h3>
-        <h6>Large tealight size🔥~5+hr</h6>
-       <div class="product-options-container"></div>
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
-
-              <div class="product-card" data-name="Ovel tray" data-price="124" data-discount="20">
-        <div class="product-slider">
-            <img src="ovel.jpg" alt="ovel" class="active">
-          </div>
-        <h3>Ovel tray <p class="price"><span><s>124</s></span>₹99</p></h3>
-        <h6>Ovel tray</h6>
-       <!-- <div class="product-options-container"></div> -->
-        <button class="btn add-to-cart">Add to Cart</button>
-      </div>
-      </div>
-     <!-- all the product should be place above this line -->
-        
-    
-        <div class="combo-section">
-        <h2>Create Your Combo Set</h2>
-        <div class="combo-card">
-          <label for="combo1">Candle 1:</label>
-          <select id="combo1"></select>
-
-          <label for="combo2">Candle 2:</label>
-          <select id="combo2"></select>
-
-          <label for="combo3">Candle 3 (Optional):</label>
-          <select id="combo3"></select>
+          <img src="rose piller.jpg" alt="rose Candle" class="active">
+          <img src="rose piller 1.webp" alt="rose Candle">
         </div>
+        <h3>Rose piller <p class="price">₹90</p></h3>
+        <h6>📏4cm 4cm 7cm 🔥~3hr</h6>
+        <div class="product-options-container"></div> 
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
 
-        <div id="combo-qty-control"></div>
-        <button class="btn add-to-cart" onclick="addComboToCart()">Add Combo to Cart</button>
+      <div class="product-card" data-name="3 inch urli" data-price="262.5" data-discount="20">
+        <div class="product-slider">
+          <img src="3'' urli.webp" alt="3 inch urli" class="active">
+          <img src="3'' urli.webp" alt="3 inch urli">
+        </div>
+        <h3>3" urli candle<p class="price"><span><s>262.5</s></span>₹210</p></h3>
+        <h6>🔥~3hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
 
-        </section>
-  <!-- About -->
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>
-      At Flira, we craft premium candles with care. From scented rose to relaxing tuilp pieces, 
-      our creations add warmth and elegance to your life.
-    </p>
+      <div class="product-card" data-name="Peony Candle" data-price="100">
+        <div class="product-slider">
+          <img src="Peony1.jpeg" alt="Peony Candle" class="active">
+          <img src="Peony1.jpeg" alt="Peony Candle">
+        </div>
+        <h3>Peony <p class="price">₹100</p></h3>
+        <h6>📏7.5cm 7.5cm 3.1cm 🔥~2.5hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-name="6 inch urli" data-price="350" data-discount="20">
+        <div class="product-slider">
+          <img src="6'' urli.webp" alt="6 inch urli" class="active">
+          <img src="3'' urli.webp" alt="6 inch urli">
+        </div>
+        <h3>6" urli candle <p class="price"><span><s>350</s></span>₹280</p></h3>
+        <h6>🔥~3hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-name="50 ml glass" data-price="100">
+        <div class="product-slider">
+          <img src="50ml glass.webp" alt="50ml glass" class="active">
+          <img src="50ml glass.webp" alt="Peony Candle">
+        </div>
+        <h3>50 ml glass candle<p class="price">₹100</p></h3>
+        <h6>🔥~5hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-name="80 ml glass" data-price="120">
+        <div class="product-slider">
+          <img src="80ml.webp" alt="80ml glass" class="active">
+          <img src="80ml.webp" alt="80ml glass">
+        </div>
+        <h3>80 ml glass candle<p class="price">₹120</p></h3>
+        <h6>🔥~8hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-name="80 ml glass" data-price="120">
+        <div class="product-slider">
+          <img src="Gel.webp" alt="80ml glass" class="active">
+          <img src="Gel.webp" alt="80ml glass">
+        </div>
+        <h3>Gel 80 ml glass candle<p class="price">₹120</p></h3>
+        <h6>🔥~8hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+
+      <div class="product-card" data-name="flower urli" data-price="75" data-discount="20">
+        <div class="product-slider">
+          <img src="flower urli.webp" alt="Peony Candle" class="active">
+          <img src="flower urli.webp" alt="Peony Candle">
+        </div>
+        <h3>Flower urli <p class="price"><span><s>75</s></span>₹60</p></h3>
+        <h6>🔥~1hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-name="modak" data-price="60">
+        <div class="product-slider">
+          <img src="modak.webp" alt="modak candle" class="active">
+          <img src="modak.webp" alt="modak Candle">
+        </div>
+        <h3>Modak candle <p class="price">₹60</p></h3>
+        <h6>🔥~1.5hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-name="Heart" data-price="96" data-discount="20">
+        <div class="product-slider">
+          <img src="heart1.jpg" alt="heart Candle" class="active">
+          <img src="heart.avif" alt="heart Candle">
+        </div>
+        <h3>Heart <p class="price"><span><s>96</s></span>₹76</p></h3>
+        <h6>📏4.5cm 4.5cm 3.2cm 🔥~3hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-name="Thread" data-price="79" data-discount="20">
+        <div class="product-slider">
+          <img src="thread1.jpg" alt="thread Candle" class="active">
+          <img src="thread.jpg" alt="thread Candle">
+        </div>
+        <h3>Thread <p class="price"><span><s>79</s></span>₹63</p></h3>
+        <h6>📏4.4cm 4.4cm 4.5cm 🔥~3.5hr</h6>
+        <div class="product-options-container"></div>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Combo Section -->
+    <div class="combo-section">
+      <h2>Create Your Combo Set</h2>
+      <div class="combo-card">
+        <label for="combo1">Candle 1:</label>
+        <select id="combo1"></select>
+
+        <label for="combo2">Candle 2:</label>
+        <select id="combo2"></select>
+
+        <label for="combo3">Candle 3 (Optional):</label>
+        <select id="combo3"></select>
+      </div>
+
+      <div id="combo-qty-control"></div>
+      <button class="btn add-to-cart" onclick="addComboToCart()">Add Combo to Cart</button>
+    </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="contact">
     <div>
-    <h2>Contact / Custom Order</h2>
-    <form id="orderForm" onsubmit="submitOrder(event)">
-      <input id="name" placeholder="Your name" required>
-      <input id="phone" placeholder="Your phone number" required>
-      <input id="product" placeholder="Product name (optional)">
-      <input id="qty" type="number" value="1" min="1" placeholder="Quantity">
-      <textarea id="message" placeholder="Message or delivery address" rows="5" required></textarea>
-      <button class="btn checkout-btn">Send via WhatsApp</button>
-    </form>
+      <h2>Contact / Custom Order</h2>
+      <form id="orderForm" onsubmit="submitOrder(event)">
+        <input id="name" placeholder="Your name" required>
+        <input id="phone" placeholder="Your phone number" required>
+        <input id="product" placeholder="Product name (optional)">
+        <input id="qty" type="number" value="1" min="1" placeholder="Quantity">
+        <textarea id="message" placeholder="Message or delivery address" rows="5" required></textarea>
+        <button class="btn checkout-btn">Send via WhatsApp</button>
+      </form>
     </div>
   </section>
-  <!-- Footer -->
+
   <footer class="footer">
     <p>© 2025 Flira Candles. All rights reserved.</p>
   </footer>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
